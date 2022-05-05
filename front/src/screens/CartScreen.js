@@ -16,8 +16,8 @@ const CartScreen = () => {
   const {cartItems} = cart
  
   const dispatch = useDispatch();
-  const qty=queryParams.get('qty') 
-  //? Number(queryParams.split('=')[1]):1
+  const qty=Number(queryParams.get('qty') )
+//? Number(queryParams.split('=')[1]):1
 
   useEffect(() => {
     if (productId){
