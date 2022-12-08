@@ -12,7 +12,14 @@ import bodyParser from 'body-parser'
 dotenv.config();
 connectDB();
 const app = express();
-app.use(cors());
+this.app.use(cors({
+          origin: [
+               
+                'https://e-commerce-client.onrender.com'
+             ],
+             credentials: true,
+         }));
+
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
