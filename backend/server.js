@@ -4,7 +4,7 @@ import  dotenv  from 'dotenv'
 import  productRoutes  from './routes/productRoutes.js'
 import  userRoutes  from './routes/userRoutes.js'
 import  orderRoutes  from './routes/orderRoutes.js'
-
+import cors from 'cors';
 import  connectDB  from './config/db.js'
 import  {notFound,errorHandler}  from './middleware/errorMiddleware.js'
 import bodyParser from 'body-parser'
@@ -12,10 +12,7 @@ import bodyParser from 'body-parser'
 dotenv.config();
 connectDB();
 const app = express();
-
-
-
-
+app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
